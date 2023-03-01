@@ -66,16 +66,21 @@ class Layer_Dense:
     def back_ReLU(self):
         #backout is dAdZ, should return 1 for x > 0 and 0 for x <= 0
         #note, we change values of 0 to 1e-7 to prevent division by 0 errors
-        backout = np.where(self.activations <= 0 , 0, 1)
-        for i,row in enumerate(self.output):
-            for n,val in enumerate(row):
-                if val == 0:
-                    self.output[i][n] = 1e-7
-        dLdZ = np.dot(backout.T, -1/self.output)
-        return dLdZ
         
-        #in theory it should return the inputs multiplied by dLdZ but making the shapes align is difficult, trying just using dLdZ as dLdW and seeing what happens
-        #return np.dot(self.activations.T, dLdZ)
+                
+    
+        back = self.output
+        for i in range(len(self.output)):
+            for n in range(len(self.output[0])):
+                if back[i][n] <= 0:
+                    back[i][n] = 0
+                else:
+                    back[i][n] = 1
+
+        dLdW = np.dot(self.activations.T, back)
+        return dLdW
+        
+
 
     
     def back_Softmax(self,truth):
