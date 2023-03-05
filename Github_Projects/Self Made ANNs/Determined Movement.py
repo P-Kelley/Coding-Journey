@@ -29,9 +29,11 @@ loss = loss_function.calculate(w.output, y)
 
 print('Loss:', loss)
 
-w.backpropagate(0.001, y)
 
 
-w = ann.runModel(X)
-loss = loss_function.calculate(w.output, y)
-print('Loss:', loss)
+for a in range(10):
+    w.backpropagate(0.01, y)
+    w = ann.runModel(X)
+    loss = loss_function.calculate(w.output, y)
+    print('Loss:', loss)
+

@@ -107,6 +107,7 @@ class runModel:
         
     def backpropagate(self,learnrate, truth):
         #Goes from output layer to input layer and adjust weights and biases in correct direction
+
         for i,layer in enumerate(reversed(layerlist)):
             i = len(layerlist) - i
 
