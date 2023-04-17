@@ -1,5 +1,5 @@
 import numpy as np
-import math
+import matplotlib.pyplot as plt
 
 
 #This is a temp data generator for testing purposes
@@ -14,6 +14,24 @@ def create_data(points, classes):
         Y[ix] = class_number
     return X,Y 
 
+def create_distributions(points):
+    #TODO make this work
+    possion = np.random.poisson(1, points)
+    normal = np.random.normal(0, 1, points)
+    gamma = np.random.gamma(2, 1, points)
+    beta = np.random.beta(1, 1, points)
+    distributions = [possion, normal, gamma, beta]
+    retdist = []
+    tempdist = []
+    for n in range(len(distributions)):
+        for i in range(len(distributions[n])):
+            tempdist.append((distributions[n][i], n))
+        
+        retdist.append((tempdist))
+        tempdist = []
+
+
+    return retdist
 
 class Activation_ReLU:
     def forward(self, inputs):
