@@ -1,4 +1,4 @@
-#This is a showcase of how to implement basic api calls to an AWS EC2 instance. You do not need to 
+#This is a showcase of how to implement basic api calls to an AWS EC2 instance.
 #Note: You need to have config and credential files setup for your user to make AWS API calls
 
 

@@ -1,0 +1,1 @@
+This is a work in progress neural network I am making to better my understanding of what is happening inside common deep learning libraries. I am using only numpy for linear algebra handling to build these networks.
