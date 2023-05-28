@@ -36,7 +36,7 @@ class KNNClassifer:
         
         kneighbor_indices = self.kneighbors(X)
         kneighbor_labels = np.apply_along_axis(
-                lambda x : mymodel._y.iloc[x],
+                lambda x : self._y.iloc[x],
                 axis = 0,
                 arr = kneighbor_indices
             )
