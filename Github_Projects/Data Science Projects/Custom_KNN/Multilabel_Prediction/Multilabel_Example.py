@@ -1,7 +1,7 @@
 from sklearn.model_selection import train_test_split
 import pandas as pd
 from sklearn.metrics.pairwise import euclidean_distances
-from Minimum_Vote_Multilabel_KNN import KNNClassifer
+from Minimum_Vote_Multilabel_KNN import KNNClassifier
 
 iris = pd.read_csv(r'C:\Users\Mike\Self_Made_Code\AI\Kaggle Competition\Bioinformatics\Custom_KNN\iris.csv')
 
@@ -19,7 +19,7 @@ test_size = 0.2
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size)
 
 
-mymodel = KNNClassifer(metric = euclidean_distances, n_neighbors=5, minvote = 0)
+mymodel = KNNClassifier(metric = euclidean_distances, n_neighbors=5, minvote = 0)
 mymodel.fit(X_train, y_train)
 prediction = mymodel.score(X_test, y_test)
 

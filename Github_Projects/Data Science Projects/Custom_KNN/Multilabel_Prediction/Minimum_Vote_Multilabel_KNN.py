@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-class KNNClassifer:
+class KNNClassifier:
     #minvote is a added parameter that allows you to specify the minimum number of nearest neighbors with that label to vote for that label, otherwise it will vote for label -1, which will correspond to no label
     #The default value of 0 makes this act like a standard KNN algorithm
     #This implementation includes support for multiple predition labels at once. Simply pass in a y column for each label prediction.
