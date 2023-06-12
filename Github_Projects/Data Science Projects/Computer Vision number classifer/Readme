@@ -1,0 +1,1 @@
+This is part of a project that will focus on a network that can detected and predict numbers inside a windowed input box. The numbers may be typed or may be in a game font, and the windowed box may be of varying sizes. This contains the basic video window creation.
