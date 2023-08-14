@@ -2,9 +2,9 @@
 The equation is written L = sum( -y_predicted * log(y_result) ) . The sum is over all neurons in a batch of outputs. 
 For a classification problem our predicted outputs will be all 0 except for our expected class will be 1. 
 This simplifies the equation to be L = -log(y_result) which is a very simple equation for a loss function. 
-Note: this is a natural log, (ln in math). Comp sci just uses log and assumaes it as ln'''
+Note: this is a natural log, (ln in math). Comp sci just uses log and assumaes it as ln
 
-''' Here is a simple example of how the categotical loss function simplifies
+Here is a simple example of how the categotical loss function simplifies
 import math
 
 softmax_output = [0.8, 0.1, 0.2]
@@ -17,12 +17,10 @@ loss = -(math.log(softmax_output[0]) * target_output[0] +
         math.log(softmax_output[1]) * target_output[1] + 
         math.log(softmax_output[1]) * target_output[2] )
 
-#note this becomes the same as loss = -math.log(softmax_output[0])
+note this becomes the same as loss = -math.log(softmax_output[0])
 
-print(loss)
-'''
 
-'''Using numpy this can be implemented easier with class targets, an array containing the values where the expected value is
+Using numpy this can be implemented easier with class targets, an array containing the values where the expected value is
 Ex: [0, 1, 1] Would mean that for the first set of data the target is at index 0, second and third set of data the target is at index 1
 Ex:
 softmax_outputs = np.array([[0.7, 0.1, 0.2], [0.1, 0.5, 0.4], [0.02, 0.9, 0.08]])

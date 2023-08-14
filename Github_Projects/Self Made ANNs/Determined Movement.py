@@ -31,7 +31,7 @@ print('Loss:', loss)
 
 
 
-for a in range(10):
+for epoch in range(20):
     w.backpropagate(0.01, y)
     w = ann.runModel(X)
     loss = loss_function.calculate(w.output, y)
